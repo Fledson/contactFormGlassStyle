@@ -1,0 +1,339 @@
+* {
+  /* resetando css padrão */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: 'Poppins', sans-serif;
+}
+
+.content {
+  /* resolvendoproblema do overflow não pegando em umUm elemento absolutamente posicionado é realmente posicionado em relação a um relativepai, ou o pai relativo encontrado mais próximo. Portanto, o elemento com overflow: hiddendeve estar entre relativee absoluteelementos posicionados */
+  position: relative;
+  overflow: hidden;
+}
+
+form {
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+  padding: 1.25rem;
+  width: 100%;
+  
+  background-color: #537895;
+  background-image: linear-gradient(315deg, #537895 0%, #09203f 74%);
+}
+
+form::before {
+  content: '';
+  position: absolute;
+  width: 21.875rem;
+  height: 21.875rem;
+  background-color: #e7eff9;
+  background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+  border-radius: 50%;
+  opacity: 0.6;
+  /* altera a posição do objeto */
+  transform: translate(-420px, -200px);
+}
+
+form::after {
+  content: '';
+  position: absolute;
+  width: 21.875rem;
+  height: 21.875rem;
+  background-color: #e7eff9;
+  background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+  border-radius: 50%;
+  opacity: 0.6;
+  transform: translate(400px, 200px);
+}
+
+.ball1{
+  content: '';
+  position: absolute;
+  width: 21.875rem;
+  height: 21.875rem;
+  background-color: #e7eff9;
+  background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+  border-radius: 50%;
+  opacity: 0.6;
+  transform: translate(200px, -20px);
+  filter: blur(150px);
+}
+.ball2{
+  content: '';
+  position: absolute;
+  width: 21.875rem;
+  height: 21.875rem;
+  background-color: #e7eff9;
+  background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%);
+  border-radius: 50%;
+  opacity: 0.6;
+  /* altera a posição do objeto */
+  transform: translate(1200px, -300px);
+  filter: blur(150px);
+}
+
+
+form .container {
+  position: relative;
+  z-index: 1000;
+  width: 100%;
+  /* crescimento maximo até */
+  max-width: 1000px;
+  padding: 50px;
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.1);
+  /* sombra bem transparende ao redor */
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  /* bordas */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  /* filtro de embaçar */
+  backdrop-filter: blur(25px);
+}
+
+form .container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  pointer-events: none;
+  transform: skewX(-15deg);
+}
+
+form .container h2 {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+form .container .row100 {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+form .container .row100 .col {
+  position: relative;
+  width: 100%;
+  padding: 0 10px;
+  margin: 30px 0 20px;
+}
+
+form .container .row100 .col .inputBox {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  color: #fff;
+}
+
+form .container .row100 .col .inputBox input,
+form .container .row100 .col .inputBox textarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  padding: 0 10px;
+  z-index: 1;
+  color: #000;
+}
+
+form .container .row100 .col .inputBox .text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 40px;
+  font-size: 18px;
+  padding: 0 10px;
+  display: block;
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+/* Transição ao selecionar */
+form .container .row100 .col .inputBox input:focus + .text,
+form .container .row100 .col .inputBox input:valid + .text,
+form .container .row100 .col .inputBox textarea:focus + .text,
+form .container .row100 .col .inputBox textarea:valid + .text {
+  top: -35px;
+  left: -10px;
+}
+
+form .container .row100 .col .inputBox .line {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #fff;
+  transition: 0.5s;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+form .container .row100 .col .inputBox input:focus ~ .line,
+form .container .row100 .col .inputBox input:valid ~ .line {
+  height: 100%;
+}
+
+form .container .row100 .col .inputBox.textarea {
+  position: relative;
+  width: 100%;
+  height: 100px;
+  padding: 10px 0;
+}
+
+form .container .row100 .col .inputBox textarea:focus ~ .line,
+form .container .row100 .col .inputBox textarea:valid ~ .line {
+  height: 100%;
+}
+
+form .container .row100 .col.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+form .container .row100 .col button {
+  width: 20rem;
+  position: relative;
+  z-index: 1;
+  padding: 1rem 2.5rem;
+  border: unset;
+  border-radius: 0.9rem;
+  overflow: hidden;
+  color: #212121;
+  background: #e8e8e8;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 800;
+  box-shadow: 4px 8px 19px -3px rgba(0, 0, 0, 0.27);
+  -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+  transition: all 250ms;
+
+  margin-bottom: 0.5rem;
+}
+
+form .container .row100 .col button::before {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #1e95ff;
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+}
+
+form .container .row100 .col button:hover::before {
+  width: 100%;
+}
+
+form .container .row100 .col button:hover {
+  color: #FFF;
+}
+
+
+.ball1 {
+    -webkit-animation-name: movelight-1;
+    -webkit-animation-duration: 10s;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: normal;
+}
+.ball2 {
+  -webkit-animation-name: movelight-2;
+  -webkit-animation-duration: 10s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-direction: normal;
+}
+
+/* ANIMAÇÃO */
+@-webkit-keyframes movelight-1 {
+  0% {
+    left: 0%;
+    bottom: 10%;
+  }
+  30% {
+    left: 30%;
+    bottom: -20%;
+  }
+  60% {
+    left: 60%;
+}
+  80% {
+    left: 30%;
+    bottom: 50%;
+  }
+  100% {
+    left: 0%;
+    bottom: 10%;
+  }
+}
+
+@-webkit-keyframes movelight-2 {
+  0% {
+    right: 70%;
+    bottom: 10%;
+  }
+  30% {
+    right: 120%;
+    bottom: -20%;
+  }
+  60% {
+    right: 150%;
+}
+  80% {
+    right: 120%;
+    bottom: 50%;
+  }
+  100% {
+    right: 70%;
+    bottom: 10%;
+  }
+}
+
+
+@media (max-width: 768px) {
+  form::before {
+    /* altera a posição do objeto */
+    transform: translate(-200px, -180px);
+    filter: opacity(40%);
+  }
+  form::after {
+    /* altera a posição do objeto */
+    position: absolute;
+    transform: translate(220px, 202px);
+    filter: opacity(40%);
+  }
+
+  form .container {
+    padding: 20px;
+  }
+
+  form .container h2 {
+    font-size: 28px;
+  }
+}

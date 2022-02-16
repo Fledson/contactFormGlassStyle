@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato</title>
+
+  <!-- favicon -->
+  <link rel="shortcut icon" href="./accets/icon.png" type="image/x-icon">
+  <!-- css -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="content">
+    <div class="ball1"></div>
+    <form action="https://formsubmit.co/fledsonhenrique@gmail.com" onsubmit="Form.submit(event)">
+      <!-- Titulo -->
+      <div class="container">
+          <h2>Entre em contato</h2>
+  
+  
+        <!-- Primeira Linha (Nome) -->
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox">
+              <input type="text" name="name" id="name" required="required">
+              <span class="text">Seu nome</span>
+              <span class="line"></span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="inputBox">
+              <input type="text" name="company" id="company" required="required">
+              <span class="text">Seu Estabelecimento</span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Segunda Linha (dados de contato) -->
+        <div class="row100">
+  
+          <div class="col">
+            <div class="inputBox">
+              <input type="text" name="email" id="email" required="required">
+              <span class="text">Email</span>
+              <span class="line"></span>
+            </div>
+          </div>
+  
+          <div class="col">
+            <div class="inputBox">
+              <input type="tel" name="phone" id="phone" onkeyup="Utils.maskPhone(event)" required="required">
+              <span class="text">Telefone</span>
+              <span class="line"></span>
+            </div>
+          </div>
+  
+     
+        </div>
+  
+        <!-- Terceira Linha (Mensagem) -->
+        <div class="row100">
+          <div class="col">
+            <div class="inputBox textarea">
+              <textarea required="required" id="message"></textarea>
+              <span class="text">Escreva brevemente sobre o que precisa...</span>
+              <span class="line"></span>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Quarta Linha (Botão) -->
+        <div class="row100">
+          <div class="col button">
+            <button type="reset">Limpar</button>
+            <button type="submit">Enviar</button>
+          </div>
+        </div>
+  
+    </div>
+  </form>
+    <div class="ball2"></div>
+  </div>
+  
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
